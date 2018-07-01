@@ -32,13 +32,12 @@
         <!--文件编码-->
         <property name="javaFileEncoding" value="UTF-8"/>
 
-        <plugin type="com.hcss.common.mybatis.plugin.MysqlGroupByPlugin" />
-        <plugin type="com.hcss.common.mybatis.plugin.MysqlPaginationPlugin" />
-        <plugin type="com.hcss.common.mybatis.plugin.MysqlInsertBatchPlugin" />
-        <plugin type="com.hcss.common.mybatis.plugin.MysqlUpdateBatchByIdPlugin" />
-        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <plugin type="com.suvan.mybatis.plugin.MysqlGroupByPlugin" />
+        <plugin type="com.suvan.mybatis.plugin.MysqlPaginationPlugin" />
+        <plugin type="com.suvan.mybatis.plugin.MysqlInsertBatchPlugin" />
+        <plugin type="com.suvan.mybatis.plugin.MysqlUpdateBatchByIdPlugin" />
 
-        <commentGenerator type="com.hcss.common.mybatis.plugin.MysqlCommentGenerator">
+        <commentGenerator type="com.suvan.mybatis.plugin.MysqlCommentGenerator">
             <property name="suppressDate" value="true" />
             <property name="suppressAllComments" value="false" />
         </commentGenerator>
