@@ -1,7 +1,7 @@
 /**
 * @描述: Demo.java
 * @作者: suvan
-* @创建日期: 2018-07-01 07:20:08
+* @创建日期: 2018-07-03 08:11:36
 */
 package com.suvan.demo.plugin.model;
 
@@ -69,21 +69,5 @@ public class Demo extends BasePagingModel {
      */
     public void setUpdatetime(String updatetime) {
         this.updatetime = updatetime;
-    }
-
-    /**
-     * 
-     */
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", updatetime=").append(updatetime);
-        sb.append("]");
-        return sb.toString();
     }
 }

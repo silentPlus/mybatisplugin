@@ -268,12 +268,7 @@ public class MysqlCommentGenerator implements CommentGenerator {
     }
 
     public void addJavaFileComment(CompilationUnit compilationUnit, IntrospectedTable introspectedTable, Boolean flag) {
-        compilationUnit.addFileCommentLine("/**");
-        compilationUnit.addFileCommentLine("* @描述: " + compilationUnit.getType().getShortName() + ".java");
-        // compilationUnit.addFileCommentLine("* @作者: " + systemProperties.getProperty("user.name"));
-        compilationUnit.addFileCommentLine("* @作者: suvan");
-        compilationUnit.addFileCommentLine("* @创建日期: " + currentDateStr);
-        compilationUnit.addFileCommentLine("*/");
+        addJavaFileComment(compilationUnit);
     }
 
     public void addComment(XmlElement xmlElement) {
