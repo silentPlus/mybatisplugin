@@ -19,17 +19,21 @@ public class MybatisLombokPlugin extends PluginAdapter {
 
     @Override
     public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
-        // Model文件引入lombok注释
-        topLevelClass.addImportedType("lombok.Getter");
-        topLevelClass.addImportedType("lombok.Setter");
-        topLevelClass.addImportedType("lombok.ToString");
-
-        topLevelClass.addAnnotation("@Getter");
-        topLevelClass.addAnnotation("@Setter");
-        topLevelClass.addAnnotation("@ToString");
-        return true;
+        addLombok(topLevelClass);
+        return super.modelBaseRecordClassGenerated(topLevelClass, introspectedTable);
     }
 
+    @Override
+    public boolean modelRecordWithBLOBsClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        addLombok(topLevelClass);
+        return super.modelRecordWithBLOBsClassGenerated(topLevelClass, introspectedTable);
+    }
+
+    @Override
+    public boolean modelPrimaryKeyClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        addLombok(topLevelClass);
+        return super.modelPrimaryKeyClassGenerated(topLevelClass, introspectedTable);
+    }
 
     public boolean validate(List<String> warnings) {
         return true;
@@ -58,5 +62,16 @@ public class MybatisLombokPlugin extends PluginAdapter {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private void addLombok(TopLevelClass topLevelClass) {
+        // Model文件引入lombok注释
+        topLevelClass.addImportedType("lombok.Getter");
+        topLevelClass.addImportedType("lombok.Setter");
+        topLevelClass.addImportedType("lombok.ToString");
+
+        topLevelClass.addAnnotation("@Getter");
+        topLevelClass.addAnnotation("@Setter");
+        topLevelClass.addAnnotation("@ToString");
     }
 }

@@ -34,7 +34,7 @@ public class MysqlGroupByPlugin extends PluginAdapter {
 			MybatisPluginUtil.addFieldAndMethod(context, topLevelClass, introspectedTable, "groupBy", "String");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.exit(0);
+			System.exit(-1);
 		}
 		return super.modelExampleClassGenerated(topLevelClass, introspectedTable);
 	}
